@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" as="image" href="./src/imgs/landing-image.png" />
     <title>template-web-3</title>
   </head>
   <body>
@@ -21,7 +22,7 @@
       class="relative bg-white mx-auto px-8 py-[3rem_2rem] md:py-10 before:content-[''] before:absolute before:w-0 before:duration-700 before:left-0 before:z-[-1] before:h-[4px] before:bg-main-color before:top-0 has-[li:hover]:before:w-full shadow-[5px_0_10px_0_#c2c2c2] z-[2]"
     >
       <div
-        class="container flex flex-col gap-10 items-center md:flex-row md:justify-between relative"
+        class="container flex flex-col gap-10 items-center md:flex-row md:justify-between"
       >
         <a
           href="#hero"
@@ -41,9 +42,10 @@
               </label>
               <input type="checkbox" id="link" hidden class="peer" />
               <div
-                class="absolute left-0 z-2 flex flex-col md:flex-row items-center bg-white w-full p-2 md:p-12 md:gap-20 other-links border-b-2 border-main-color rounded-b-4xl rounded-bl-4xl opacity-0 scale-0 pointer-events-none transition-all duration-300 origin-top peer-checked:opacity-100 peer-checked:scale-100 peer-checked:pointer-events-auto"
+                class="absolute left-0 right-0 z-2 flex flex-col md:flex-row items-center bg-white w-full p-2 md:p-12 md:gap-20 other-links border-b-2 border-main-color rounded-b-4xl rounded-bl-4xl opacity-0 scale-0 pointer-events-none transition-all duration-300 peer-checked:opacity-100 peer-checked:scale-100 peer-checked:pointer-events-auto top-full max-w-[calc(100%_-_6rem)] mx-auto"
               >
                 <img
+                  loading="lazy"
                   src="./src/imgs/megamenu.png"
                   aria-hidden="true"
                   class="hidden h-[220px] lg:block"
@@ -148,7 +150,11 @@
           class="container grid grid-cols-[repeat(auto-fill,minmax(260px,1fr))] gap-12 justify-items-center"
         >
           <article class="article-box group">
-            <img src="./src/imgs/cat-01.jpg" alt="img of article 01" />
+            <img
+              loading="lazy"
+              src="./src/imgs/cat-01.jpg"
+              alt="img of article 01"
+            />
             <div class="text-shape-a">
               <h3>Test Title</h3>
               <p>
@@ -172,7 +178,11 @@
             </div>
           </article>
           <article class="article-box group">
-            <img src="./src/imgs/cat-02.jpg" alt="img of article 02" />
+            <img
+              loading="lazy"
+              src="./src/imgs/cat-02.jpg"
+              alt="img of article 02"
+            />
             <div class="text-shape-a">
               <h3>Test Title</h3>
               <p>
@@ -196,7 +206,11 @@
             </div>
           </article>
           <article class="article-box group">
-            <img src="./src/imgs/cat-03.jpg" alt="img of article 03" />
+            <img
+              loading="lazy"
+              src="./src/imgs/cat-03.jpg"
+              alt="img of article 03"
+            />
             <div class="text-shape-a">
               <h3>Test Title</h3>
               <p>
@@ -220,7 +234,11 @@
             </div>
           </article>
           <article class="article-box group">
-            <img src="./src/imgs/cat-04.jpg" alt="img of article 04" />
+            <img
+              loading="lazy"
+              src="./src/imgs/cat-04.jpg"
+              alt="img of article 04"
+            />
             <div class="text-shape-a">
               <h3>Test Title</h3>
               <p>
@@ -244,7 +262,11 @@
             </div>
           </article>
           <article class="article-box group">
-            <img src="./src/imgs/cat-05.jpg" alt="img of article 05" />
+            <img
+              loading="lazy"
+              src="./src/imgs/cat-05.jpg"
+              alt="img of article 05"
+            />
             <div class="text-shape-a">
               <h3>Test Title</h3>
               <p>
@@ -268,7 +290,11 @@
             </div>
           </article>
           <article class="article-box group">
-            <img src="./src/imgs/cat-06.jpg" alt="img of article 06" />
+            <img
+              loading="lazy"
+              src="./src/imgs/cat-06.jpg"
+              alt="img of article 06"
+            />
             <div class="text-shape-a">
               <h3>Test Title</h3>
               <p>
@@ -292,7 +318,11 @@
             </div>
           </article>
           <article class="article-box group">
-            <img src="./src/imgs/cat-07.jpg" alt="img of article 07" />
+            <img
+              loading="lazy"
+              src="./src/imgs/cat-07.jpg"
+              alt="img of article 07"
+            />
             <div class="text-shape-a">
               <h3>Test Title</h3>
               <p>
@@ -316,7 +346,11 @@
             </div>
           </article>
           <article class="article-box group">
-            <img src="./src/imgs/cat-08.jpg" alt="img of article 08" />
+            <img
+              loading="lazy"
+              src="./src/imgs/cat-08.jpg"
+              alt="img of article 08"
+            />
             <div class="text-shape-a">
               <h3>Test Title</h3>
               <p>
@@ -351,6 +385,7 @@
         >
           <div class="box-p-gallery">
             <img
+              loading="lazy"
               src="./src/imgs/gallery-01.png"
               alt="photo gallery one"
               class="p-gallery"
@@ -358,6 +393,7 @@
           </div>
           <div class="box-p-gallery">
             <img
+              loading="lazy"
               src="./src/imgs/gallery-02.png"
               alt="photo gallery two"
               class="p-gallery"
@@ -365,6 +401,7 @@
           </div>
           <div class="box-p-gallery">
             <img
+              loading="lazy"
               src="./src/imgs/gallery-03.jpg"
               alt="photo gallery three"
               class="p-gallery"
@@ -372,6 +409,7 @@
           </div>
           <div class="box-p-gallery">
             <img
+              loading="lazy"
               src="./src/imgs/gallery-04.png"
               alt="photo gallery four"
               class="p-gallery"
@@ -379,6 +417,7 @@
           </div>
           <div class="box-p-gallery">
             <img
+              loading="lazy"
               src="./src/imgs/gallery-05.jpg"
               alt="photo gallery five"
               class="p-gallery"
@@ -386,6 +425,7 @@
           </div>
           <div class="box-p-gallery">
             <img
+              loading="lazy"
               src="./src/imgs/gallery-06.png"
               alt="photo gallery six"
               class="p-gallery"
@@ -400,7 +440,11 @@
         >
           <article class="feat group">
             <div class="image before:bg-[rgb(244_64_54_/_60%)] w-fit">
-              <img src="./src/imgs/features-01.jpg" alt="image one" />
+              <img
+                loading="lazy"
+                src="./src/imgs/features-01.jpg"
+                alt="image one"
+              />
             </div>
             <div class="text">
               <h3 class="after:bg-[#f44036]">Quality</h3>
@@ -417,7 +461,11 @@
           </article>
           <article class="feat group">
             <div class="image before:bg-[rgba(0_150_136_/_60%)] w-fit">
-              <img src="./src/imgs/features-02.jpg" alt="image two" />
+              <img
+                loading="lazy"
+                src="./src/imgs/features-02.jpg"
+                alt="image two"
+              />
             </div>
             <div class="text">
               <h3 class="after:bg-[#009688]">Time</h3>
@@ -434,7 +482,11 @@
           </article>
           <article class="feat group">
             <div class="image before:bg-[rgba(3_169_244_/_60%)] w-fit">
-              <img src="./src/imgs/features-03.jpg" alt="image three" />
+              <img
+                loading="lazy"
+                src="./src/imgs/features-03.jpg"
+                alt="image three"
+              />
             </div>
             <div class="text">
               <h3 class="after:bg-[#03a9f4]">Passion</h3>
@@ -460,7 +512,11 @@
           class="container grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-20 justify-center"
         >
           <article class="info-user">
-            <img src="./src/imgs/avatar-01.png" alt="photo mohamed farag" />
+            <img
+              loading="lazy"
+              src="./src/imgs/avatar-01.png"
+              alt="photo mohamed farag"
+            />
             <h3>Mohamed Farag</h3>
             <span class="job-user">Full Stack Developer</span>
             <div class="rates">
@@ -476,7 +532,11 @@
             </p>
           </article>
           <article class="info-user">
-            <img src="./src/imgs/avatar-02.png" alt="photo mohamed ibrahim" />
+            <img
+              loading="lazy"
+              src="./src/imgs/avatar-02.png"
+              alt="photo mohamed ibrahim"
+            />
             <h3>Mohamed Ibrahim</h3>
             <span class="job-user">Full Stack Developer</span>
             <div class="rates">
@@ -492,7 +552,11 @@
             </p>
           </article>
           <article class="info-user">
-            <img src="./src/imgs/avatar-03.png" alt="photo shady nabil" />
+            <img
+              loading="lazy"
+              src="./src/imgs/avatar-03.png"
+              alt="photo shady nabil"
+            />
             <h3>Shady Nabil</h3>
             <span class="job-user">Full Stack Developer</span>
             <div class="rates">
@@ -508,7 +572,11 @@
             </p>
           </article>
           <article class="info-user">
-            <img src="./src/imgs/avatar-04.png" alt="photo Amr Hendawy" />
+            <img
+              loading="lazy"
+              src="./src/imgs/avatar-04.png"
+              alt="photo Amr Hendawy"
+            />
             <h3>Amr Hendawy</h3>
             <span class="job-user">Full Stack Developer</span>
             <div class="rates">
@@ -524,7 +592,11 @@
             </p>
           </article>
           <article class="info-user">
-            <img src="./src/imgs/avatar-05.png" alt="photo Sherief Ashraf" />
+            <img
+              loading="lazy"
+              src="./src/imgs/avatar-05.png"
+              alt="photo Sherief Ashraf"
+            />
             <h3>Sherief Ashraf</h3>
             <span class="job-user">Full Stack Developer</span>
             <div class="rates">
@@ -540,7 +612,11 @@
             </p>
           </article>
           <article class="info-user">
-            <img src="./src/imgs/avatar-06.png" alt="photo Osama mohamed" />
+            <img
+              loading="lazy"
+              src="./src/imgs/avatar-06.png"
+              alt="photo Osama mohamed"
+            />
             <h3>Osama Mohamed</h3>
             <span class="job-user">Full Stack Developer</span>
             <div class="rates">
@@ -564,30 +640,11 @@
         >
           <article class="p-team-members group">
             <div class="data">
-              <img src="./src/imgs/team-01.jpg" alt="photo team members one" />
-              <div class="social">
-                <a href="#" aria-label="go to facebook">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" aria-label="go to twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" aria-label="go to linkedin">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#" aria-label="go to youtube">
-                  <i class="fab fa-youtube"></i>
-                </a>
-              </div>
-            </div>
-            <div class="text">
-              <h3>name</h3>
-              <p>Simple Short Description</p>
-            </div>
-          </article>
-          <article class="p-team-members group">
-            <div class="data">
-              <img src="./src/imgs/team-02.jpg" alt="photo team members two" />
+              <img
+                loading="lazy"
+                src="./src/imgs/team-01.jpg"
+                alt="photo team members one"
+              />
               <div class="social">
                 <a href="#" aria-label="go to facebook">
                   <i class="fab fa-facebook-f"></i>
@@ -611,6 +668,34 @@
           <article class="p-team-members group">
             <div class="data">
               <img
+                loading="lazy"
+                src="./src/imgs/team-02.jpg"
+                alt="photo team members two"
+              />
+              <div class="social">
+                <a href="#" aria-label="go to facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="go to twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" aria-label="go to linkedin">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="go to youtube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+            <div class="text">
+              <h3>name</h3>
+              <p>Simple Short Description</p>
+            </div>
+          </article>
+          <article class="p-team-members group">
+            <div class="data">
+              <img
+                loading="lazy"
                 src="./src/imgs/team-03.jpg"
                 alt="photo team members three"
               />
@@ -636,53 +721,11 @@
           </article>
           <article class="p-team-members group">
             <div class="data">
-              <img src="./src/imgs/team-04.jpg" alt="photo team members four" />
-              <div class="social">
-                <a href="#" aria-label="go to facebook">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" aria-label="go to twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" aria-label="go to linkedin">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#" aria-label="go to youtube">
-                  <i class="fab fa-youtube"></i>
-                </a>
-              </div>
-            </div>
-            <div class="text">
-              <h3>name</h3>
-              <p>Simple Short Description</p>
-            </div>
-          </article>
-          <article class="p-team-members group">
-            <div class="data">
-              <img src="./src/imgs/team-05.png" alt="photo team members five" />
-              <div class="social">
-                <a href="#" aria-label="go to facebook">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" aria-label="go to twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" aria-label="go to linkedin">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#" aria-label="go to youtube">
-                  <i class="fab fa-youtube"></i>
-                </a>
-              </div>
-            </div>
-            <div class="text">
-              <h3>name</h3>
-              <p>Simple Short Description</p>
-            </div>
-          </article>
-          <article class="p-team-members group">
-            <div class="data">
-              <img src="./src/imgs/team-06.png" alt="photo team members six" />
+              <img
+                loading="lazy"
+                src="./src/imgs/team-04.jpg"
+                alt="photo team members four"
+              />
               <div class="social">
                 <a href="#" aria-label="go to facebook">
                   <i class="fab fa-facebook-f"></i>
@@ -706,6 +749,61 @@
           <article class="p-team-members group">
             <div class="data">
               <img
+                loading="lazy"
+                src="./src/imgs/team-05.png"
+                alt="photo team members five"
+              />
+              <div class="social">
+                <a href="#" aria-label="go to facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="go to twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" aria-label="go to linkedin">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="go to youtube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+            <div class="text">
+              <h3>name</h3>
+              <p>Simple Short Description</p>
+            </div>
+          </article>
+          <article class="p-team-members group">
+            <div class="data">
+              <img
+                loading="lazy"
+                src="./src/imgs/team-06.png"
+                alt="photo team members six"
+              />
+              <div class="social">
+                <a href="#" aria-label="go to facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="go to twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" aria-label="go to linkedin">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" aria-label="go to youtube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+            <div class="text">
+              <h3>name</h3>
+              <p>Simple Short Description</p>
+            </div>
+          </article>
+          <article class="p-team-members group">
+            <div class="data">
+              <img
+                loading="lazy"
                 src="./src/imgs/team-07.jpg"
                 alt="photo team members seven"
               />
@@ -732,6 +830,7 @@
           <article class="p-team-members group">
             <div class="data">
               <img
+                loading="lazy"
                 src="./src/imgs/team-08.jpg"
                 alt="photo team members eight"
               />
@@ -829,7 +928,11 @@
           class="container flex flex-col gap-40 lg:flex-row gap-20 items-center"
         >
           <div class="left">
-            <img src="./src/imgs/skills.png" alt="photo about of our skills" />
+            <img
+              loading="lazy"
+              src="./src/imgs/skills.png"
+              alt="photo about of our skills"
+            />
           </div>
           <div class="right flex flex-col gap-20 w-full lg:flex-1">
             <div class="html progress-box">
@@ -894,13 +997,18 @@
         <h2 class="main-heading">How It Works ?</h2>
         <div class="container flex flex-col xl:flex-row items-center gap-40">
           <img
+            loading="lazy"
             src="./src/imgs/work-steps.png"
             alt="Web developer working at a desk with coding icons"
             class="max-w-[calc(100%_-_8rem)] mx-auto"
           />
           <ol class="work-steps">
             <li>
-              <img src="./src/imgs/work-steps-1.png" aria-hidden="true" />
+              <img
+                loading="lazy"
+                src="./src/imgs/work-steps-1.png"
+                aria-hidden="true"
+              />
               <div class="text">
                 <h3>Business Analysis</h3>
                 <p>
@@ -911,7 +1019,11 @@
               </div>
             </li>
             <li>
-              <img src="./src/imgs/work-steps-2.png" aria-hidden="true" />
+              <img
+                loading="lazy"
+                src="./src/imgs/work-steps-2.png"
+                aria-hidden="true"
+              />
 
               <div class="text">
                 <h3>Architecture</h3>
@@ -923,7 +1035,11 @@
               </div>
             </li>
             <li>
-              <img src="./src/imgs/work-steps-3.png" aria-hidden="true" />
+              <img
+                loading="lazy"
+                src="./src/imgs/work-steps-3.png"
+                aria-hidden="true"
+              />
               <div class="text">
                 <h3>Development</h3>
                 <p>
@@ -942,6 +1058,7 @@
           class="container flex flex-col gap-40 md:gap-20 xl:gap-40 items-center md:flex-row"
         >
           <img
+            loading="lazy"
             src="./src/imgs/events.png"
             aria-hidden="true"
             class="md:max-w-[calc(100%_-_40rem)]"
@@ -1012,7 +1129,11 @@
           <article class="box-pricing">
             <div class="info">
               <h3>Basic</h3>
-              <img src="./src/imgs/hosting-basic.png" aria-hidden="true" />
+              <img
+                loading="lazy"
+                src="./src/imgs/hosting-basic.png"
+                aria-hidden="true"
+              />
               <div class="price">
                 <span class="number">$15</span>
                 <span class="month">per month</span>
@@ -1050,7 +1171,11 @@
             >
             <div class="info">
               <h3>advanced</h3>
-              <img src="./src/imgs/hosting-advanced.png" aria-hidden="true" />
+              <img
+                loading="lazy"
+                src="./src/imgs/hosting-advanced.png"
+                aria-hidden="true"
+              />
               <div class="price">
                 <span class="number">$25</span>
                 <span class="month">per month</span>
@@ -1083,6 +1208,7 @@
             <div class="info">
               <h3>professional</h3>
               <img
+                loading="lazy"
                 src="./src/imgs/hosting-professional.png"
                 aria-hidden="true"
               />
@@ -1180,6 +1306,7 @@
             <div class="right">
               <figure class="flex flex-col justify-between h-full">
                 <img
+                  loading="lazy"
                   src="./src/imgs/video-preview.jpg"
                   alt="Video thumbnail"
                   class="object-cover"
@@ -1244,6 +1371,7 @@
             </p>
           </div>
           <img
+            loading="lazy"
             src="./src/imgs/discount.png"
             aria-hidden="true"
             class="relative z-2 w-[280px]"
@@ -1370,12 +1498,36 @@
           </div>
         </address>
         <div class="imgs-footer grid grid-cols-[repeat(3,80px)] gap-4">
-          <img src="./src/imgs/gallery-01.png" aria-hidden="true" />
-          <img src="./src/imgs/gallery-02.png" aria-hidden="true" />
-          <img src="./src/imgs/gallery-03.jpg" aria-hidden="true" />
-          <img src="./src/imgs/gallery-04.png" aria-hidden="true" />
-          <img src="./src/imgs/gallery-05.jpg" aria-hidden="true" />
-          <img src="./src/imgs/gallery-06.png" aria-hidden="true" />
+          <img
+            loading="lazy"
+            src="./src/imgs/gallery-01.png"
+            aria-hidden="true"
+          />
+          <img
+            loading="lazy"
+            src="./src/imgs/gallery-02.png"
+            aria-hidden="true"
+          />
+          <img
+            loading="lazy"
+            src="./src/imgs/gallery-03.jpg"
+            aria-hidden="true"
+          />
+          <img
+            loading="lazy"
+            src="./src/imgs/gallery-04.png"
+            aria-hidden="true"
+          />
+          <img
+            loading="lazy"
+            src="./src/imgs/gallery-05.jpg"
+            aria-hidden="true"
+          />
+          <img
+            loading="lazy"
+            src="./src/imgs/gallery-06.png"
+            aria-hidden="true"
+          />
         </div>
       </div>
       <small
