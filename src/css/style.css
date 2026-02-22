@@ -11,12 +11,12 @@
   --color-feat-quality: #d32f2f;
   --color-feat-time: #00796b;
   --color-feat-passion: #0277bd;
-  :root {
-    --fa-font-display: swap !important;
-  }
 }
 /* global values */
 @layer base {
+  :root {
+    --fa-font-display: swap !important;
+  }
   html {
     font-size: 62.5%;
     scroll-behavior: smooth;
