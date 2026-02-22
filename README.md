@@ -29,11 +29,13 @@ Optimization is at the heart of Uio. This project implements advanced techniques
 
 ### 💎 Performance Highlights:
 
-- **World-Class Iconography Loading:** Instead of loading the entire FontAwesome library, I used `@font-face` to call only the specific local files needed. I combined this with `--fa-font-display: swap !important` in the `:root` to automatically load a fallback font instantly before the icons render. This combination delivered a world-class performance result.
+- **World-Class Iconography Loading:** Instead of loading the entire FontAwesome library, I used `@font-face` to call only the specific local files needed. I combined this with `--fa-font-display: swap !important` to automatically load a fallback font instantly before the icons render.
+- **Smart CSS Variable Architecture:** I explicitly placed the `--fa-font-display` variable inside `:root` within `@layer base`.
+  - **Why not `@theme`?** Tailwind's `@theme` is designed to generate utility classes and variants. Placing it there would force PostCSS and the JIT engine to unnecessarily compile an unused utility class, wasting build resources.
+  - **Why `:root` inside `@layer base`?** FontAwesome's architecture strictly requires a globally scoped CSS variable (`:root`). Wrapping it in `@layer base` ensures it bundles seamlessly with Tailwind's base files without confusing Vite or exhausting PostCSS, guaranteeing a hyper-optimized build.
 - **Reflow & Rendering Optimization:** I strictly avoided using properties like `margin` for movement to prevent expensive browser **Reflows**. Instead, I relied heavily on `transform: translate` for movement and `transform: scale` for resizing. While I did use `width` and `left` for specific layout-dependent positioning, it was a calculated decision for elements that don't consume significant CPU overhead.
 - **Resource Prioritization:** Using preload techniques to bypass the browser's discovery phase for critical LCP elements.
 - **Efficient Composite Layers:** Strategic use of `will-change` to offload animations to the GPU, ensuring a stable **60 FPS**.
-- **Tailwind JIT & Purge:** Drastically reduced final CSS bundle size by shipping only used classes.
 
 ---
 
@@ -112,11 +114,13 @@ I am a **15-year-old Junior Front-End Developer** with a relentless obsession fo
 
 ### 💎 أبرز تحسينات الأداء:
 
-- **تحميل أيقونات فائق السرعة:** بدلاً من استدعاء مكتبة FontAwesome بالكامل، استخدمت `@font-face` لتحميل الملفات المحلية المطلوبة فقط، ودمجت ذلك مع استخدام `--fa-font-display: swap !important` داخل الـ `:root`. هذه العبقرية تجعل المتصفح يحمل خطاً احتياطياً تلقائياً قبل عرض الأيقونات، مما منع أي تأخير وأعطاني نتيجة أداء عالمية!
+- **تحميل أيقونات فائق السرعة:** بدلاً من استدعاء مكتبة FontAwesome بالكامل، استخدمت `@font-face` لتحميل الملفات المحلية المطلوبة فقط، ودمجت ذلك مع استخدام `--fa-font-display: swap !important`.
+- **هندسة المتغيرات والـ Build Process:** قمت بوضع متغير `--fa-font-display` تحديداً داخل `:root` ضمن `@layer base`.
+  - **لماذا ليس `@theme`؟** لأن وظيفة `@theme` في Tailwind هي إنشاء Utility Classes بمتغيراتها (Variants). وضع متغير وظيفي هناك سيجبر PostCSS ومحرك JIT على استهلاك موارد المعالجة لتوليد Class لن يتم استخدامه أصلاً، وهذا إهدار لموارد الـ Build.
+  - **لماذا `:root` داخل `@layer base`؟** مصممو FontAwesome بنوا المكتبة لتقرأ من متغير عام (CSS Variable)، والمكان الصحيح له هو `:root`. ووضعه داخل `@layer base` يضمن دمجه بسلاسة مع ملفات Tailwind الأساسية، مما يمنع تشتيت Vite أو PostCSS ويضمن عملية بناء نظيفة واحترافية.
 - **تحسين الـ Reflow ومعالجة المتصفح:** تجنبت تماماً استخدام خصائص مثل `margin` للتحريك لمنع حدوث **Reflow** مكلف للمتصفح، واعتمدت بشكل أساسي على `transform: translate` للتحريك و `transform: scale` لتغيير الحجم. ورغم استخدامي لـ `width` و `left` في بعض العناصر، إلا أنه كان قراراً هندسياً مدروساً لعناصر تحتاج التموضع في أماكن مختلفة بطبيعتها ولا تستهلك الكثير من الـ CPU.
 - **تحديد أولويات الموارد:** استخدام التحميل المسبق لتسريع تحميل العناصر الأساسية (LCP).
 - **طبقات المعالجة الفعالة:** استخدام `will-change` بشكل استراتيجي لمعالجة الرسوم المتحركة عبر كارت الشاشة (GPU) لضمان استقرار الأداء عند **60 إطار في الثانية (60 FPS)**.
-- **Tailwind JIT:** تقليل حجم ملف الـ CSS النهائي بشكل هائل عن طريق دمج الأكواد المستخدمة فقط.
 
 ---
 
