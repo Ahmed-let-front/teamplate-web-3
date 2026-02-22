@@ -1,0 +1,493 @@
+@import "tailwindcss";
+@custom-variant hover (&:hover);
+@theme {
+  --color-main-color: #2196f3;
+  --color-main-color-alt: #1787e0;
+  --color-section-background: #ececec;
+  --color-social-color: #b9b9b9;
+  --color-backg-social: #313131;
+}
+/* global values */
+@layer base {
+  html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-size: 1.6rem;
+    font-family: "Cairo", sans-serif;
+  }
+}
+/* global values */
+@utility container {
+  @apply px-[1.6rem] max-w-none mx-auto;
+  /* custom bk */
+  /* for mobile */
+  @media (width >= 320px) {
+    max-inline-size: calc(100% - 2.5rem);
+  }
+  /* for mobile */
+  /* small screen */
+  @media (width >= 48rem) {
+    inline-size: 725px;
+  }
+  /* small screen */
+  /* mid screen */
+  @media (width >= 62rem) {
+    inline-size: 950px;
+  }
+  /* mid screen */
+  /* lg screen */
+  @media (width >= 75rem) {
+    inline-size: 1170px;
+  }
+  /* lg screen */
+}
+/* start component */
+@layer components {
+  .li-header-shape {
+    @apply cursor-pointer text-[1.4rem] md:text-[1.8rem] capitalize px-4 md:px-8 text-black duration-300 tracking-[2px] font-bold;
+    & > a,
+    & abbr {
+      @apply duration-300 transition-[transform_color] hover:scale-125 block hover:text-main-color;
+    }
+  }
+  .other-links {
+    ul {
+      & > * {
+        @apply text-main-color font-bold py-6 border-b-1 border-b-[#e9e6e6];
+        a {
+          @apply text-2xl block duration-300 transition-transform hover:translate-x-8;
+        }
+        i {
+          @apply me-2 ms-6 text-2xl;
+        }
+      }
+    }
+  }
+  .article-box {
+    @apply shadow-[0_10px_10px_0_rgba(0_0_0_/_10%)] hover:shadow-[0_10px_10px_0_rgba(0_0_0_/_20%)] hover:translate-y-[-1rem] duration-300 transition-[box-shadow,translate] rounded-[2rem] overflow-hidden;
+  }
+  .text-shape-a {
+    @apply flex flex-col gap-4 bg-white  p-12;
+    h3 {
+      @apply font-bold text-4xl;
+    }
+    p {
+      @apply text-[#777];
+    }
+  }
+  .main-heading {
+    color: black;
+    font-weight: bold;
+    font-size: 3rem;
+    border: 2px solid black;
+    position: relative;
+    padding: 0.5rem 3rem;
+    width: fit-content;
+    margin-inline: auto;
+    text-transform: uppercase;
+    border-radius: 1.5rem;
+    z-index: 2;
+    transition:
+      color 0.3s,
+      border-color 0.3s;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: var(--color-main-color);
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+    &::before {
+      right: -10px;
+      transition:
+        width 0.3s,
+        height 0.3s,
+        border-radius 0.3s,
+        right 0.3s 0.3s;
+    }
+    &::after {
+      left: -10px;
+      transition:
+        width 0.3s,
+        height 0.3s,
+        border-radius 0.3s,
+        left 0.3s 0.3s;
+    }
+    &:hover {
+      color: white;
+      border-color: transparent;
+      transition-delay: 0.3s;
+      &::before {
+        right: 0;
+        width: 60%;
+        height: 100%;
+        border-radius: 0 1.5rem 1.5rem 0;
+        transition:
+          right 0.3s,
+          width 0.3s 0.3s,
+          height 0.3s 0.3s,
+          border-radius 0.3s 0.3s;
+      }
+      &::after {
+        left: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: 1.5rem 0 0 1.5rem;
+        transition:
+          left 0.3s,
+          width 0.3s 0.3s,
+          height 0.3s 0.3s,
+          border-radius 0.3s 0.3s;
+      }
+    }
+  }
+  .box-p-gallery {
+    @apply shadow-[0_0_10px_0_rgba(0_0_0_/_20%)] rounded-4xl border-[3.5rem] border-white relative overflow-hidden before:content-[''] before:absolute before:bg-section-background/30 before:w-0 before:h-0 before:origin-center before:duration-300 before:transition-[width,height] hover:before:w-full hover:before:h-full before:z-2 before:left-1/2 before:top-1/2 before:will-change-[translate] before:-translate-1/2 before:pointer-events-none;
+    .p-gallery {
+      @apply duration-300 hover:scale-110 relative hover:rotate-3;
+    }
+  }
+  .feat {
+    @apply overflow-hidden border-1 border-[#ccc] text-center rounded-4xl shadow-[0_0_10px_0_rgba(0_0_0_/_20%)];
+    .text {
+      @apply flex flex-col gap-24 my-[0_5rem];
+    }
+    h3 {
+      @apply text-6xl w-fit font-bold relative after:absolute after:w-[90%] after:h-[5px]  after:top-[calc(100%_+_2rem)] after:left-1/2 after:translate-x-[-50%] mx-auto;
+    }
+    p {
+      @apply leading-[1.7] text-[#777] text-3xl max-w-[300px] p-9 mx-auto;
+    }
+    .image {
+      @apply relative before:content-[''] before:absolute before:w-full before:h-full before:left-0 after:absolute after:bottom-[-5px] after:right-0 after:border-[0px_0px_170px_500px] after:w-0 after:h-0 after:border-[transparent_transparent_white_transparent] after:duration-300 transition-[border-width]
+      group-hover:after:border-[0_500px_170px_0];
+    }
+    button {
+      @apply px-12 py-4 border-[3px] w-fit mx-auto grid place-items-center font-bold rounded-[5px] capitalize text-4xl relative overflow-hidden z-2 transition-colors duration-300  before:content-[''] before:absolute before:left-0 before:top-0 before:z-[-1] before:w-full before:h-full before:-translate-x-full before:transition-all before:duration-300 group-hover:before:translate-x-0 cursor-pointer;
+    }
+  }
+  [id="testimonials"] {
+    .info-user {
+      @apply relative flex flex-col gap-4 bg-white rounded-3xl border-1 border-[#ccc] shadow-[0_0_10px_0_rgba(0_0_0_/_10%)] p-[2rem_3rem] will-change-transform duration-300 transition-[transform_box-shadow] hover:-translate-y-8 hover:shadow-[0_0_10px_0_rgba(0_0_0_/_25%)];
+      img {
+        @apply size-[6rem] rounded-full absolute top-4 right-[25px] border-[1rem] border-section-background;
+      }
+
+      h3 {
+        @apply font-bold text-3xl;
+      }
+      .job-user {
+        @apply capitalize text-[#777] text-2xl;
+      }
+      .about-user {
+        @apply text-[#666];
+      }
+    }
+  }
+  .p-team-members {
+    @apply relative py-[8rem_2rem] overflow-hidden flex flex-col gap-6 after:absolute after:h-full after:w-[calc(100%_-_6rem)] 
+      after:bg-section-background  after:rounded-4xl after:top-0 after:right-0 after:-z-2 before:absolute before:right-0 before:top-0 before:rounded-4xl before:w-0 before:h-full  before:duration-300 before:transition-[width]  hover:before:w-[calc(100%_-_6rem)] before:bg-[#e4e4e4] before:-z-1;
+    .data {
+      @apply flex gap-8 items-center;
+      img {
+        @apply rounded-4xl max-w-[calc(100%_-_6rem)] duration-300 transition-[filter] group-hover:grayscale-100;
+      }
+      .social {
+        @apply flex flex-col gap-6 flex-1;
+        i {
+          @apply text-[#777] duration-300 transition-colors hover:text-main-color text-[0.9em];
+        }
+      }
+    }
+    .text {
+      @apply flex flex-col gap-2 ps-40;
+      h3 {
+        @apply text-main-color capitalize text-3xl font-bold duration-300 transition-colors group-hover:text-[#777];
+      }
+    }
+  }
+  #services {
+    @apply [counter-reset:services-counter];
+    .b-services {
+      @apply bg-white rounded-4xl relative border-1 border-[#ccc]  text-center  shadow-[0_0_10px_0_rgba(0_0_0_/_20%)]  duration-300 transition-transform transition-shadow hover:shadow-[0_0_10px_0_rgba(0_0_0_/_30%)] hover:-translate-y-8 overflow-hidden flex flex-col gap-16 [counter-increment:services-counter] before:absolute before:h-[3px] before:w-0 before:bg-main-color before:duration-500 transition-[width] before:top-0 before:left-0 hover:before:w-full;
+      .service {
+        @apply flex flex-col gap-8 px-16 py-[4rem_0];
+      }
+      h3 {
+        @apply text-main-color text-5xl font-bold;
+      }
+      i {
+        @apply text-[#d5d5d5] mx-auto;
+      }
+      .info {
+        @apply bg-[#f9f9f9] p-6  
+      relative 
+      before:absolute 
+      before:bottom-0 
+      before:left-0 
+      before:bg-main-color 
+      before:text-white 
+      before:p-16 
+      before:h-full before:content-['0'_counter(services-counter)] before:font-bold before:text-3xl after:content-[''] after:absolute after:-skew-x-30
+      after:bg-[#ccc] after:h-[150%] after:px-10 after:top-0 after:left-30 overflow-hidden;
+        a {
+          @apply text-main-color capitalize text-right block font-bold;
+        }
+      }
+    }
+  }
+  #our-skills {
+    .right {
+      .progress-box {
+        @apply flex flex-col gap-6;
+        .progress {
+          @apply rounded-4xl bg-section-background  h-15 border-1 border-[#ccc] relative;
+          .fr {
+            @apply absolute top-0 left-0 bg-main-color  h-full rounded-2xl block;
+          }
+          p {
+            @apply absolute px-4 py-2 border-1 border-[#ccc] rounded-2xl shadow-[0_0_10px_0_black] text-main-color font-bold -right-[5px] -top-20;
+          }
+        }
+        h3 {
+          @apply font-bold text-4xl capitalize;
+        }
+      }
+    }
+  }
+  .work-steps {
+    @apply flex flex-col gap-16;
+    li {
+      @apply bg-[#f6f5f5] rounded-4xl border-1 border-white shadow-[0_0_10px_0_rgba(0_0_0_/_20%)] 
+      flex flex-col xl:flex-row gap-16 
+      items-center p-10 duration-500 transition-[transform_box-shadow] hover:shadow-[0_0_10px_0_rgba(0_0_0_/_40%)] hover:-translate-y-8;
+      img {
+        @apply w-[64px];
+      }
+      h3 {
+        @apply font-bold text-4xl;
+      }
+      p {
+        @apply text-[1.8rem] text-[#777777] leading-[1.7];
+      }
+      .text {
+        @apply flex flex-col gap-4 text-center;
+      }
+    }
+  }
+  [role="timer"] {
+    .box-timer {
+      @apply border-1 border-[#d4d4d4] rounded-2xl text-center duration-500 transition-[border-color]  hover:border-main-color;
+      .number {
+        @apply font-bold text-main-color text-5xl p-6 block;
+      }
+      hr {
+        @apply border-[#ccc] duration-500 transition-[border-color] group-hover:border-main-color;
+      }
+      .time {
+        @apply capitalize p-4 block;
+      }
+    }
+  }
+  .box-pricing {
+    @apply bg-white rounded-4xl shadow-[0_0_10px_0_rgba(0_0_0_/_20%)]  flex flex-col gap-20 items-center pt-0 p-16 px-0 duration-300 transition-[translate,outline] hover:-translate-y-8 outline-4 outline-transparent hover:outline-main-color relative overflow-hidden before:absolute before:top-0 before:left-0 before:h-1/2 before:w-0 before:duration-700 before:transition-[width] before:bg-[#f6f6f6] before:-z-1 hover:before:w-full after:absolute after:h-1/2 after:w-0 after:bg-[#f6f6f6] after:-z-1 after:duration-700 after:transition-[width] after:bottom-0 after:right-0 hover:after:w-full;
+    h3 {
+      @apply capitalize font-bold text-4xl text-center;
+    }
+    .info {
+      @apply px-14 py-16 flex flex-col gap-20 items-center w-full;
+    }
+    .price {
+      @apply flex flex-col gap-4 items-center;
+      .number {
+        @apply text-main-color text-8xl font-bold;
+      }
+      .month {
+        @apply text-[#777] text-3xl capitalize;
+      }
+    }
+    img {
+      @apply h-[8rem];
+    }
+    ul {
+      @apply self-start flex flex-col gap-12 divide-y divide-[#eee] w-full;
+      li {
+        @apply py-[0_2rem];
+      }
+      h4 {
+        @apply text-2xl;
+      }
+      i {
+        @apply text-main-color font-bold ms-8 me-2;
+      }
+    }
+    button {
+      @apply border-main-color border-2 rounded-2xl p-6 text-3xl text-main-color 
+      capitalize 
+      font-bold 
+      cursor-pointer 
+      duration-300 transition-colors hover:bg-main-color hover:text-white;
+    }
+  }
+  aside.left {
+    ul {
+      @apply flex flex-col gap-[1px];
+      li {
+        @apply p-8 duration-300 transition-colors bg-white hover:bg-[#fafafa]/90 cursor-pointer;
+        h4 {
+          @apply font-[500] capitalize duration-300 transition-colors group-hover:text-main-color;
+        }
+        a {
+          @apply flex flex-col gap-4;
+        }
+      }
+    }
+  }
+  .stats {
+    li {
+      @apply bg-white p-10 flex flex-col items-center gap-6 rounded-4xl overflow-hidden
+       shadow-[0_0_10px_0_rgba(0_0_0_/_20%)] duration-300 transition-transform
+       hover:-translate-y-6
+       relative
+       before:absolute
+       before:content-[''] 
+       before:bottom-0 before:h-0 before:w-[3px] before:bg-main-color 
+       before:left-0
+       before:duration-700
+       before:transition-[height] 
+       hover:before:h-full
+       after:absolute
+       after:top-0 
+       after:h-0 
+       after:w-[3px] 
+       after:bg-main-color 
+       after:right-0
+       after:duration-700
+       after:transition-[height] 
+       hover:after:h-full;
+      i {
+        @apply text-6xl;
+      }
+      .number {
+        @apply font-bold text-7xl;
+      }
+      .state {
+        @apply italic font-bold text-main-color text-4xl;
+      }
+    }
+  }
+  form {
+    .content {
+      @apply w-[280px] mx-auto;
+    }
+    .contact-us {
+      @apply placeholder:capitalize py-6 px-8 focus:outline-none duration-300 caret-main-color 
+      transition-[outline] 
+      border-1 border-main-color 
+      rounded-3xl bg-section-background/50;
+    }
+    textarea {
+      @apply h-[200px] !rounded-br-none;
+    }
+    input[value="send"] {
+      @apply bg-main-color rounded-3xl text-white font-bold p-6 capitalize w-[150px] mx-auto cursor-pointer hover:bg-main-color/80;
+    }
+  }
+  .footer {
+    .contact {
+      a {
+        @apply text-social-color bg-backg-social py-4 px-6 rounded-2xl duration-300 transition-colors;
+      }
+    }
+    .links {
+      ul {
+        & > * {
+          @apply text-white capitalize py-6;
+          a {
+            @apply duration-300 transition-transform hover:translate-x-4 block text-social-color;
+          }
+          i {
+            @apply text-main-color me-2;
+          }
+        }
+      }
+    }
+  }
+  address {
+    div {
+      @apply flex flex-col md:flex-row gap-8 items-center;
+      span {
+        @apply text-social-color;
+      }
+      i {
+        @apply text-main-color text-4xl;
+      }
+    }
+  }
+  .imgs-footer {
+    img {
+      @apply border-3 border-white;
+    }
+  }
+}
+
+/* end component */
+/* start uti */
+@layer utilities {
+}
+/* end uti */
+/* start animate */
+@keyframes breath {
+  to {
+    transform: translateY(5rem);
+  }
+}
+@keyframes angel {
+  20% {
+    transform: translateY(2rem);
+  }
+  50% {
+    transform: translateY(0);
+  }
+}
+@keyframes main-heading {
+  100% {
+    color: #ffff;
+    border: none;
+  }
+}
+@keyframes left-circle {
+  50% {
+    right: 0;
+  }
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+@keyframes after-circle {
+  50% {
+    left: 0;
+  }
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+@keyframes alt-right {
+  to {
+    transform: translate(1rem);
+  }
+}
+/* end animate */
