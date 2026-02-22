@@ -15,6 +15,14 @@
   font-display: swap;
   src: url("@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2") format("woff2");
+}
 @theme {
   --color-main-color: #2196f3;
   --color-main-dark: #0c6ebf;
