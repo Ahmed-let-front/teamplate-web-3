@@ -64,7 +64,7 @@
         a {
           @apply text-2xl block duration-300 transition-transform hover:translate-x-8;
         }
-        i {
+        svg {
           @apply me-2 ms-6 text-2xl;
         }
       }
@@ -242,7 +242,7 @@
       }
       .social {
         @apply flex flex-col gap-6 flex-1;
-        i {
+        svg {
           @apply text-text-muted duration-300 transition-colors hover:text-main-color text-[0.9em];
         }
       }
@@ -267,7 +267,7 @@
       h3 {
         @apply text-main-color text-5xl font-bold;
       }
-      i {
+      svg {
         @apply text-[#d5d5d5] mx-auto;
       }
       .info {
@@ -368,7 +368,7 @@
       h4 {
         @apply text-2xl;
       }
-      i {
+      svg {
         @apply text-main-color font-bold ms-8 me-2;
       }
     }
@@ -416,7 +416,7 @@
        after:duration-700
        after:transition-[height] 
        hover:after:h-full;
-      i {
+      svg {
         @apply text-6xl;
       }
       .number {
@@ -457,7 +457,7 @@
           a {
             @apply duration-300 transition-transform hover:translate-x-4 block text-social-color;
           }
-          i {
+          svg {
             @apply text-main-color me-2;
           }
         }
@@ -470,7 +470,7 @@
       span {
         @apply text-social-color;
       }
-      i {
+      svg {
         @apply text-main-color text-4xl;
       }
     }
