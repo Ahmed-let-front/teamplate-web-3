@@ -62,7 +62,7 @@ Optimization is at the heart of Uio. This project implements advanced techniques
 I am a **15-year-old Junior Front-End Developer** with a relentless obsession for performance.
 
 - **Daily Commitment**: Dedicated **8 to 10 hours** of focused deep-work and coding.
-- **Project Portfolio**: Delivered **15+ high-performance projects** in just 7 months, focusing on modern UI/UX.
+- **Project Portfolio**: Delivered **15+ high-performance projects** in just 2 months, focusing on modern UI/UX.
 - **Goal**: Mastering the browser rendering engine to build the next generation of web applications.
 
 ![Full Preview](public/preview.png)
@@ -147,7 +147,7 @@ I am a **15-year-old Junior Front-End Developer** with a relentless obsession fo
 أنا **مطور واجهات أمامية عمري 15 عاماً**، ولدي شغف لا ينتهي بتحسين الأداء.
 
 - **الالتزام اليومي**: أكرس **8 إلى 10 ساعات يومياً** للتعلم والبرمجة بتركيز عميق.
-- **معرض الأعمال**: قمت بتسليم **أكثر من 15 مشروعاً عالى الأداء** خلال 7 أشهر فقط.
+- **معرض الأعمال**: قمت بتسليم **أكثر من 15 مشروعاً عالى الأداء** خلال 2 أشهر فقط.
 - **الهدف**: احتراف هندسة معالجة المتصفح (Browser Rendering Engine) لبناء الجيل القادم من تطبيقات الويب.
 
 ![Full Preview](public/preview.png)
