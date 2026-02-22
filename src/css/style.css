@@ -2,10 +2,15 @@
 @custom-variant hover (&:hover);
 @theme {
   --color-main-color: #2196f3;
+  --color-main-dark: #0c6ebf;
   --color-main-color-alt: #1787e0;
   --color-section-background: #ececec;
   --color-social-color: #b9b9b9;
   --color-backg-social: #313131;
+  --color-text-muted: #555555;
+  --color-feat-quality: #d32f2f;
+  --color-feat-time: #00796b;
+  --color-feat-passion: #0277bd;
 }
 /* global values */
 @layer base {
@@ -74,8 +79,11 @@
       @apply font-bold text-4xl;
     }
     p {
-      @apply text-[#777];
+      @apply text-text-muted;
     }
+  }
+  .article-footer {
+    @apply flex justify-between text-main-dark p-[2rem_3rem] bg-white;
   }
   .main-heading {
     color: black;
@@ -163,7 +171,7 @@
       @apply text-6xl w-fit font-bold relative after:absolute after:w-[90%] after:h-[5px]  after:top-[calc(100%_+_2rem)] after:left-1/2 after:translate-x-[-50%] mx-auto;
     }
     p {
-      @apply leading-[1.7] text-[#777] text-3xl max-w-[300px] p-9 mx-auto;
+      @apply leading-[1.7] text-text-muted text-3xl max-w-[300px] p-9 mx-auto;
     }
     .image {
       @apply relative before:content-[''] before:absolute before:w-full before:h-full before:left-0 after:absolute after:bottom-[-5px] after:right-0 after:border-[0px_0px_170px_500px] after:w-0 after:h-0 after:border-[transparent_transparent_white_transparent] after:duration-300 transition-[border-width]
@@ -171,6 +179,39 @@
     }
     button {
       @apply px-12 py-4 border-[3px] w-fit mx-auto grid place-items-center font-bold rounded-[5px] capitalize text-4xl relative overflow-hidden z-2 transition-colors duration-300  before:content-[''] before:absolute before:left-0 before:top-0 before:z-[-1] before:w-full before:h-full before:-translate-x-full before:transition-all before:duration-300 group-hover:before:translate-x-0 cursor-pointer;
+    }
+  }
+  .feat-quality {
+    .image {
+      @apply before:bg-feat-quality/60;
+    }
+    h3 {
+      @apply after:bg-feat-quality;
+    }
+    button {
+      @apply border-feat-quality text-feat-quality group-hover:before:bg-feat-quality group-hover:text-white;
+    }
+  }
+  .feat-time {
+    .image {
+      @apply before:bg-feat-time/60;
+    }
+    h3 {
+      @apply after:bg-feat-time;
+    }
+    button {
+      @apply border-feat-time text-feat-time group-hover:before:bg-feat-time group-hover:text-white;
+    }
+  }
+  .feat-passion {
+    .image {
+      @apply before:bg-feat-passion/60;
+    }
+    h3 {
+      @apply after:bg-feat-passion;
+    }
+    button {
+      @apply border-feat-passion text-feat-passion group-hover:before:bg-feat-passion group-hover:text-white;
     }
   }
   [id="testimonials"] {
@@ -184,10 +225,10 @@
         @apply font-bold text-3xl;
       }
       .job-user {
-        @apply capitalize text-[#777] text-2xl;
+        @apply capitalize text-text-muted text-2xl;
       }
       .about-user {
-        @apply text-[#666];
+        @apply text-text-muted;
       }
     }
   }
@@ -202,7 +243,7 @@
       .social {
         @apply flex flex-col gap-6 flex-1;
         i {
-          @apply text-[#777] duration-300 transition-colors hover:text-main-color text-[0.9em];
+          @apply text-text-muted duration-300 transition-colors hover:text-main-color text-[0.9em];
         }
       }
     }
@@ -210,6 +251,9 @@
       @apply flex flex-col gap-2 ps-40;
       h3 {
         @apply text-main-color capitalize text-3xl font-bold duration-300 transition-colors group-hover:text-[#777];
+      }
+      p {
+        @apply text-text-muted;
       }
     }
   }
@@ -253,7 +297,7 @@
             @apply absolute top-0 left-0 bg-main-color  h-full rounded-2xl block;
           }
           p {
-            @apply absolute px-4 py-2 border-1 border-[#ccc] rounded-2xl shadow-[0_0_10px_0_black] text-main-color font-bold -right-[5px] -top-20;
+            @apply absolute px-4 py-2 border-1 border-[#ccc] rounded-2xl shadow-[0_0_10px_0_black] text-main-dark font-bold -right-[5px] -top-20;
           }
         }
         h3 {
@@ -275,7 +319,7 @@
         @apply font-bold text-4xl;
       }
       p {
-        @apply text-[1.8rem] text-[#777777] leading-[1.7];
+        @apply text-[1.8rem] text-text-muted leading-[1.7];
       }
       .text {
         @apply flex flex-col gap-4 text-center;
@@ -310,7 +354,7 @@
         @apply text-main-color text-8xl font-bold;
       }
       .month {
-        @apply text-[#777] text-3xl capitalize;
+        @apply text-text-muted text-3xl capitalize;
       }
     }
     img {
@@ -329,7 +373,7 @@
       }
     }
     button {
-      @apply border-main-color border-2 rounded-2xl p-6 text-3xl text-main-color 
+      @apply border-main-color border-2 rounded-2xl p-6 text-3xl text-main-dark
       capitalize 
       font-bold 
       cursor-pointer 
@@ -379,7 +423,7 @@
         @apply font-bold text-7xl;
       }
       .state {
-        @apply italic font-bold text-main-color text-4xl;
+        @apply italic font-bold text-main-dark text-4xl;
       }
     }
   }
@@ -396,8 +440,8 @@
     textarea {
       @apply h-[200px] !rounded-br-none;
     }
-    input[value="send"] {
-      @apply bg-main-color rounded-3xl text-white font-bold p-6 capitalize w-[150px] mx-auto cursor-pointer hover:bg-main-color/80;
+    button[value="send"] {
+      @apply bg-[#1565c0] rounded-3xl text-white font-bold p-6 capitalize w-[150px] mx-auto cursor-pointer hover:bg-main-color/80;
     }
   }
   .footer {
