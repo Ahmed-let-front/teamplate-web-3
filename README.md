@@ -29,7 +29,8 @@ Optimization is at the heart of Uio. This project implements advanced techniques
 
 ### 💎 Performance Highlights:
 
-- **Zero-Latency Asset Loading:** By self-hosting all fonts and icons via **NPM**, eliminating extra DNS lookups.
+- **World-Class Iconography Loading:** Instead of loading the entire FontAwesome library, I used `@font-face` to call only the specific local files needed. I combined this with `--fa-font-display: swap !important` in the `:root` to automatically load a fallback font instantly before the icons render. This combination delivered a world-class performance result.
+- **Reflow & Rendering Optimization:** I strictly avoided using properties like `margin` for movement to prevent expensive browser **Reflows**. Instead, I relied heavily on `transform: translate` for movement and `transform: scale` for resizing. While I did use `width` and `left` for specific layout-dependent positioning, it was a calculated decision for elements that don't consume significant CPU overhead.
 - **Resource Prioritization:** Using preload techniques to bypass the browser's discovery phase for critical LCP elements.
 - **Efficient Composite Layers:** Strategic use of `will-change` to offload animations to the GPU, ensuring a stable **60 FPS**.
 - **Tailwind JIT & Purge:** Drastically reduced final CSS bundle size by shipping only used classes.
@@ -81,6 +82,7 @@ I am a **15-year-old Junior Front-End Developer** with a relentless obsession fo
 <div align="center">
 
 ---
+
 ---
 
 # 🌊 يويو - قالب النخبة للمواقع الشخصية (UIO)
@@ -110,7 +112,8 @@ I am a **15-year-old Junior Front-End Developer** with a relentless obsession fo
 
 ### 💎 أبرز تحسينات الأداء:
 
-- **تحميل الموارد بدون تأخير:** عن طريق استضافة جميع الخطوط والأيقونات محلياً عبر **NPM**، مما يلغي الوقت الضائع في الاتصال بسيرفرات خارجية.
+- **تحميل أيقونات فائق السرعة:** بدلاً من استدعاء مكتبة FontAwesome بالكامل، استخدمت `@font-face` لتحميل الملفات المحلية المطلوبة فقط، ودمجت ذلك مع استخدام `--fa-font-display: swap !important` داخل الـ `:root`. هذه العبقرية تجعل المتصفح يحمل خطاً احتياطياً تلقائياً قبل عرض الأيقونات، مما منع أي تأخير وأعطاني نتيجة أداء عالمية!
+- **تحسين الـ Reflow ومعالجة المتصفح:** تجنبت تماماً استخدام خصائص مثل `margin` للتحريك لمنع حدوث **Reflow** مكلف للمتصفح، واعتمدت بشكل أساسي على `transform: translate` للتحريك و `transform: scale` لتغيير الحجم. ورغم استخدامي لـ `width` و `left` في بعض العناصر، إلا أنه كان قراراً هندسياً مدروساً لعناصر تحتاج التموضع في أماكن مختلفة بطبيعتها ولا تستهلك الكثير من الـ CPU.
 - **تحديد أولويات الموارد:** استخدام التحميل المسبق لتسريع تحميل العناصر الأساسية (LCP).
 - **طبقات المعالجة الفعالة:** استخدام `will-change` بشكل استراتيجي لمعالجة الرسوم المتحركة عبر كارت الشاشة (GPU) لضمان استقرار الأداء عند **60 إطار في الثانية (60 FPS)**.
 - **Tailwind JIT:** تقليل حجم ملف الـ CSS النهائي بشكل هائل عن طريق دمج الأكواد المستخدمة فقط.
