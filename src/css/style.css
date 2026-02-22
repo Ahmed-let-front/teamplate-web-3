@@ -7,7 +7,6 @@
   font-display: swap;
   src: url("@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2") format("woff2");
 }
-
 @font-face {
   font-family: 'Font Awesome 6 Brands';
   font-style: normal;
@@ -15,7 +14,6 @@
   font-display: swap;
   src: url("@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2") format("woff2");
 }
-
 @font-face {
   font-family: 'Font Awesome 6 Free';
   font-style: normal;
