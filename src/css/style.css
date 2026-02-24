@@ -194,7 +194,7 @@
     }
     .image {
       @apply relative before:content-[''] before:absolute before:w-full before:h-full before:left-0 after:absolute after:bottom-[-5px] after:right-0 after:border-[0px_0px_170px_500px] after:w-0 after:h-0 after:border-[transparent_transparent_white_transparent] after:duration-300 transition-[border-width]
-      group-hover:after:border-[0_500px_170px_0];
+      group-hover:after:border-[0_700px_170px_0];
     }
     button {
       @apply px-12 py-4 border-[3px] w-fit mx-auto grid place-items-center font-bold rounded-[5px] capitalize text-4xl relative overflow-hidden z-2 transition-colors duration-300  before:content-[''] before:absolute before:left-0 before:top-0 before:z-[-1] before:w-full before:h-full before:-translate-x-full before:transition-all before:duration-300 group-hover:before:translate-x-0 cursor-pointer;
